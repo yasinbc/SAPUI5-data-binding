@@ -1,8 +1,9 @@
 <mvc:View
 	xmlns="sap.m"
 	xmlns:form="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
 	xmlns:mvc="sap.ui.core.mvc">
-	<Panel headerText="{i18n>panelHeaderText}" class="sapUiResponsiveMargin" width="auto">
+	<Panel headerText="{i18n>panel1HeaderText}" class="sapUiResponsiveMargin" width="auto">
 		<form:SimpleForm editable="true" layout="ColumnLayout">
 			<Label text="{i18n>firstName}"/>
 			<Input value="{/firstName}" valueLiveUpdate="true" width="200px" enabled="{/enabled}"/>
@@ -12,24 +13,15 @@
 			<CheckBox selected="{/enabled}"/>
 		</form:SimpleForm>
 	</Panel>
+	<Panel headerText="{i18n>panel2HeaderText}" class="sapUiResponsiveMargin" width="auto">
+		<content>
+			<l:VerticalLayout>
+				<Label labelFor="address" text="{i18n>address}:"/>
+				<FormattedText class="sapUiSmallMarginBottom"
+					htmlText="{/address/street}&lt;br>{/address/zip} {/address/city}&lt;br>{/address/country}"
+					id="address" 
+					width="200px"/>
+			</l:VerticalLayout>
+		</content>
+	</Panel>
 </mvc:View>
-
-
-
-
-
-<!--<mvc:View -->
-<!--		controllerName="demo.zybc_db.controller.App" -->
-<!--		xmlns:mvc="sap.ui.core.mvc" -->
-<!--		displayBlock="true" -->
-<!--		xmlns="sap.m">-->
-<!--	<Shell id="shell">-->
-<!--		<App id="app">-->
-<!--			<pages>-->
-<!--				<Page id="page" title="{i18n>title}">-->
-<!--					<content></content>-->
-<!--				</Page>-->
-<!--			</pages>-->
-<!--		</App>-->
-<!--	</Shell>-->
-<!--</mvc:View>-->
