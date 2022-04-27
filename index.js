@@ -24,6 +24,8 @@ sap.ui.require([
 		sap.ui.getCore().setModel(oModel);
 
 		var oResourceModel = new ResourceModel({
+			//To translate in German just uncomment the line above and comment the next one
+			//bundleName: "sap.ui.demo.zybc_db.i18n.i18n_de",
 			bundleName: "sap.ui.demo.zybc_db.i18n.i18n",
 			supportedLocales: ["", "de"],
 			fallbackLocale: ""
